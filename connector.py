@@ -23,6 +23,11 @@ try:
     version = cur.fetchone()
     print(version)
 
+    # select data
+    cur.execute("SELECT * from data_dig.tbl_stream_history;")
+    data = cur.fetchone()
+    print(data)
+
     # close the communication with the PostgreSQL
     cur.close()
 except Exception as e:
