@@ -25,7 +25,7 @@ try:
     # select data
     print("Select all data in data_dig.tbl_stream_history")
     cur.execute("SELECT * from data_dig.tbl_stream_history;")
-    data = cur.fetchone()
+    data = cur.fetchall()
     print(data)
 
     # close the communication with the PostgreSQL
