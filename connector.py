@@ -20,7 +20,7 @@ try:
     cur.execute('SELECT version()')
 
     # display the PostgreSQL database server version
-    version = cur.fetchone()
+    version = cur.fetchall()
     print(version)
 
     # select data
