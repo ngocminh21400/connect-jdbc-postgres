@@ -1,9 +1,8 @@
-#!/usr/bin/python3
 import psycopg2
 
 try:
     # connect to the PostgreSQL server
-    conn = psycopg2.connect(host="10.96.191.228",
+    conn = psycopg2.connect(host="postgres",
         port= '5432',
         database="appstore", 
         user="postgres", 
@@ -16,14 +15,15 @@ try:
     # create a cursor
     cur = conn.cursor()
 
-    # Execute a sql
-    cur.execute('SELECT version()')
+    # # Execute a sql
+    # cur.execute('SELECT version()')
 
-    # display the PostgreSQL database server version
-    version = cur.fetchall()
-    print(version)
+    # # display the PostgreSQL database server version
+    # version = cur.fetchall()
+    # print(version)
 
     # select data
+    print("Select all data in data_dig.tbl_stream_history")
     cur.execute("SELECT * from data_dig.tbl_stream_history;")
     data = cur.fetchone()
     print(data)
