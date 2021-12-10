@@ -3,7 +3,15 @@ import psycopg2
 
 try:
     # connect to the PostgreSQL server
-    conn = psycopg2.connect(host="10.96.191.228",database="appstore", user="postgres", password="postgres")
+    conn = psycopg2.connect(host="10.96.191.228",
+    port= '5432',
+    database="appstore", 
+    user="postgres", 
+    password="postgres",
+    sslmode = 'require',
+    sslrootcert = '/ramfs/secrets/zoomdatapg/zoomdatapgusr.cert.pem',
+    sslkey='/ramfs/secrets/zoomdatapg/zoomdatapgusr.key.pk8'
+    )
 
     # create a cursor
     cur = conn.cursor()
