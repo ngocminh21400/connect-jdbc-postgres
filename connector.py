@@ -21,7 +21,6 @@ try:
     # # display the PostgreSQL database server version
     # version = cur.fetchall()
     # print(version)
-
     # select data
     print("Select all data in data_dig.tbl_stream_history")
     cur.execute("SELECT * from data_dig.tbl_stream_history;")
